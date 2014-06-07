@@ -1,6 +1,6 @@
 # setwd("C://Users//Dominic//ExData_Plotting1//ExData_Plotting1")
-fileDirectory <- "C://Users//Dominic//ExData_Plotting1//"
-fileName <- paste(fileDirectory, "household_power_consumption.txt", sep="")
+
+file_Dir_Name <- "C://Users//Dominic//ExData_Plotting1//household_power_consumption.txt"
 dataUsed <- read.table(fileName, header=T, sep=';', na.strings="?", 
                        stringsAsFactors=T, skipNul=T)
 
