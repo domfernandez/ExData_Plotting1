@@ -22,8 +22,7 @@ subDF = subset(dataUsed, as.Date(dataUsed$Date,"%d/%m/%Y")
         )
 subDF$DateTime <- strptime(paste(subDF$Date, subDF$Time), "%d/%m/%Y %H:%M:%S")
 
-# http://www.wekaleamstudios.co.uk/posts/plotting-time-series-data-using-ggplot2/
-
-require(ggplot2)
-ggplot(subDF, aes(as.Date(subDF$Date,"%d/%m/%Y"), Global_active_power)) + geom_line() +
-  scale_x_date(format = "%b-%Y") + xlab("") + ylab("Global Active Power (kilowatts)")
+png(filename = "plot2.png", width = 480, height = 480, units = "px")
+plot(subDF$DateTime, subDF$Global_active_power, type="l", 
+     xlab="", ylab="Global Active Power (kilowatts)")
+dev.off()
